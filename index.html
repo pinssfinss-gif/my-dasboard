@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudi Arabia Health Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🏥 Saudi Arabia Health Dashboard</h1>
+                <p>Analisis Status Kesehatan & Kebijakan Kesehatan Arab Saudi</p>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="sidebar">
+            <div class="nav-items">
+                <a href="#home" class="nav-link active" onclick="showSection('home')">📊 Dashboard</a>
+                <a href="#profile" class="nav-link" onclick="showSection('profile')">🌍 Profil Negara</a>
+                <a href="#health" class="nav-link" onclick="showSection('health')">❤️ Status Kesehatan</a>
+                <a href="#policy" class="nav-link" onclick="showSection('policy')">📋 Kebijakan Kesehatan</a>
+                <a href="#vision" class="nav-link" onclick="showSection('vision')">🚀 Vision 2030</a>
+                <a href="#digital" class="nav-link" onclick="showSection('digital')">💻 Digital Health</a>
+                <a href="#statistics" class="nav-link" onclick="showSection('statistics')">📈 Statistik</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Home Section -->
+            <section id="home" class="section active">
+                <div class="section-header">
+                    <h2>Dashboard Utama</h2>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3>Populasi</h3>
+                            <p class="stat-value">35.3 Juta</p>
+                            <p class="stat-subtitle">Tahun 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🏥</div>
+                        <div class="stat-info">
+                            <h3>Rumah Sakit</h3>
+                            <p class="stat-value">499</p>
+                            <p class="stat-subtitle">Di seluruh negara</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-info">
+                            <h3>Harapan Hidup</h3>
+                            <p class="stat-value">79 Tahun</p>
+                            <p class="stat-subtitle">Tahun 2023</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍⚕️</div>
+                        <div class="stat-info">
+                            <h3>Tenaga Kesehatan</h3>
+                            <p class="stat-value">450K+</p>
+                            <p class="stat-subtitle">Profesional medis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <h3>📌 Ringkasan Situasi Kesehatan</h3>
+                        <p>Arab Saudi menghadapi <strong>beban ganda penyakit</strong>: dominasi penyakit tidak menular (PTM) seperti diabetes, obesity, dan penyakit kardiovaskular, sambil tetap mengelola ancaman penyakit menular, terutama dalam konteks Haji dan Umrah.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🎯 Target Vision 2030</h3>
+                        <p>Meningkatkan harapan hidup dari <strong>75 menjadi 80 tahun</strong> pada tahun 2030 dan menurunkan risiko kematian dini akibat PTM melalui transformasi sistem kesehatan yang terintegrasi dan berbasis teknologi digital.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="section">
+                <div class="section-header">
+                    <h2>🌍 Profil Negara & Demografi Arab Saudi</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-box">
+                        <h3>Geografi</h3>
+                        <ul>
+                            <li><strong>Luas:</strong> 2.15 juta km²</li>
+                            <li><strong>Lokasi:</strong> Semenanjung Arab, Asia Barat</li>
+                            <li><strong>Iklim:</strong> Gurun dengan suhu tinggi</li>
+                            <li><strong>Wilayah Administratif:</strong> 13 provinsi</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Demografi (2024)</h3>
+                        <ul>
+                            <li><strong>Total Populasi:</strong> 35.3 juta jiwa</li>
+                            <li><strong>Warga Saudi:</strong> 19.6 juta (55.6%)</li>
+                            <li><strong>Ekspatriat:</strong> 15.7 juta (44.4%)</li>
+                            <li><strong>Usia Produktif:</strong> 39% (15-34 tahun)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Ekonomi & Pembangunan</h3>
+                        <ul>
+                            <li><strong>Ekonomi:</strong> Berbasis minyak & gas</li>
+                            <li><strong>Status:</strong> Negara berpendapatan tinggi</li>
+                            <li><strong>Investasi Kesehatan:</strong> Signifikan melalui Vision 2030</li>
+                            <li><strong>Diversifikasi:</strong> Sektor pariwisata & teknologi</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Pusat Ibadah Global</h3>
+                        <ul>
+                            <li><strong>Haji Tahunan:</strong> Jutaan jamaah dari berbagai negara</li>
+                            <li><strong>Umrah:</strong> Perjalanan sepanjang tahun</li>
+                            <li><strong>Jamaah 2024:</strong> 1.3+ juta melayani kesehatan</li>
+                            <li><strong>Tantangan:</strong> Mass gathering & kontrol penyakit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Komposisi Populasi Arab Saudi</h3>
+                    <canvas id="populationChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Health Status Section -->
+            <section id="health" class="section">
+                <div class="section-header">
+                    <h2>❤️ Status Kesehatan Masyarakat</h2>
+                </div>
+
+                <div class="health-overview">
+                    <h3>Beban Penyakit Utama</h3>
+                    <div class="disease-grid">
+                        <div class="disease-card">
+                            <div class="disease-number">37%</div>
+                            <h4>Penyakit Kardiovaskular</h4>
+                            <p>Penyebab kematian tertinggi (jantung & stroke)</p>
+                        </div>
+
+                        <div class="disease-card">
+                            <div class="disease-number">10%</div>
+                            <h4>Kanker</h4>
+                            <p>Kanker payudara, kolorektal, dan tiroid dominan</p>
+                        </div>
+
+                        <div class="disease-card">
+                            <div class="disease-number">17.7%</div>
+                            <h4>Diabetes Melitus</h4>
+                            <p>Prevalensi tertinggi di kalangan dewasa</p>
+                        </div>
+
+                        <div class="disease-card">
+                            <div class="disease-number">3%</div>
+                            <h4>Penyakit Respiratori Kronis</h4>
+                            <p>Asma & PPOK (Penyakit Paru Obstruktif Kronis)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Kontribusi PTM terhadap Kematian</h3>
+                    <canvas id="diseaseBurdenChart"></canvas>
+                </div>
+
+                <div class="risk-factors">
+                    <h3>Faktor Risiko Utama</h3>
+                    <div class="factors-list">
+                        <div class="factor-item">
+                            <span class="factor-name">Obesitas</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 80%"></div>
+                            </div>
+                            <span class="factor-value">Tinggi</span>
+                        </div>
+                        <div class="factor-item">
+                            <span class="factor-name">Sedentary Lifestyle</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="factor-value">Tinggi</span>
+                        </div>
+                        <div class="factor-item">
+                            <span class="factor-name">Hipertensi</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="factor-value">Tinggi</span>
+                        </div>
+                        <div class="factor-item">
+                            <span class="factor-name">Merokok & Shisha</span>
+                            <div class="factor-bar">
+                                <div class="factor-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="factor-value">Sedang-Tinggi</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Policy Section -->
+            <section id="policy" class="section">
+                <div class="section-header">
+                    <h2>📋 Kebijakan Kesehatan & Pengendalian PTM</h2>
+                </div>
+
+                <div class="policy-grid">
+                    <div class="policy-card">
+                        <h3>🏛️ Landasan Hukum</h3>
+                        <ul>
+                            <li><strong>Health Sector Transformation Program (HSTP)</strong> - Reformasi sistem kesehatan</li>
+                            <li><strong>The 324 Plan</strong> - Target menurunkan mortality rate dari 510 ke 324 per 100K penduduk</li>
+                            <li><strong>Pajak Eksais (Sin Tax)</strong> - 100% untuk tembakau & minuman berenergi</li>
+                            <li><strong>Healthy Food Strategy (HFS)</strong> - Regulasi nutrisi & pangan</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-card">
+                        <h3>❤️ Pengendalian Penyakit Kardiovaskular</h3>
+                        <ul>
+                            <li>Cardiovascular Disease Management Program (CVDMP)</li>
+                            <li>Nurse-Led Clinics untuk kontrol faktor risiko</li>
+                            <li>Saudi STEMI Network untuk penanganan akut terintegrasi</li>
+                            <li>Skrining hipertensi & kolesterol massal</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-card">
+                        <h3>🩺 Pengendalian Diabetes & Ginjal</h3>
+                        <ul>
+                            <li>National Diabetes Prevention & Control Program</li>
+                            <li>Aplikasi Sehaty untuk risk assessment diabetes</li>
+                            <li>Diabetic Foot Clinics untuk pencegahan komplikasi</li>
+                            <li>Deteksi dini nefropati diabetik & hipertensif</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-card">
+                        <h3>🚭 Pengendalian Kanker & Respiratori</h3>
+                        <ul>
+                            <li>National Cancer Control Program (NCCP)</li>
+                            <li>Saudi National Mammogram Screening Program</li>
+                            <li>Mobile mammography units untuk skrining payudara</li>
+                            <li>500+ Quit-Smoking Clinics gratis di seluruh negara</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-card">
+                        <h3>💉 Pencegahan Penyakit Menular</h3>
+                        <ul>
+                            <li>Vaksin meningokokus (MenACWY) untuk Haji/Umrah</li>
+                            <li>Vaksin Polio untuk wilayah berisiko</li>
+                            <li>Vaksin Yellow Fever dari negara endemis</li>
+                            <li>Program Health Screening & Persyaratan Kesehatan</li>
+                        </ul>
+                    </div>
+
+                    <div class="policy-card">
+                        <h3>🌐 Promosi & Pencegahan</h3>
+                        <ul>
+                            <li>Healthy School Program (kolaborasi Kesehatan & Pendidikan)</li>
+                            <li>Quality of Life Program (infrastruktur olahraga & walkways)</li>
+                            <li>Healthy Food Reformulation dengan industri</li>
+                            <li>Risk Communication & Community Engagement</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vision 2030 Section -->
+            <section id="vision" class="section">
+                <div class="section-header">
+                    <h2>🚀 Saudi Vision 2030 & Transformasi Kesehatan</h2>
+                </div>
+
+                <div class="vision-overview">
+                    <div class="vision-intro">
+                        <h3>Visi Transformasi Sistem Kesehatan</h3>
+                        <p>Arab Saudi bertransformasi dari sistem kesehatan yang terfragmentasi dan berorientasi pada pengobatan (kuratif) menjadi sistem yang <strong>terintegrasi, preventif, berbasis data, dan berpusat pada pasien</strong>.</p>
+                    </div>
+
+                    <div class="vision-goals">
+                        <h3>Target Utama Vision 2030</h3>
+                        <div class="goals-grid">
+                            <div class="goal-item">
+                                <div class="goal-number">80</div>
+                                <p>Harapan Hidup Tahun 2030</p>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">324</div>
+                                <p>Mortality Rate PTM (per 100K)</p>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">↓PTM</div>
+                                <p>Menurunkan Kematian Dini</p>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">+IT</div>
+                                <p>Transformasi Digital Penuh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transformation-pillars">
+                    <h3>Pilar Transformasi Kesehatan</h3>
+                    <div class="pillars-grid">
+                        <div class="pillar">
+                            <h4>1. Prevention (Pencegahan)</h4>
+                            <ul>
+                                <li>Promosi pola hidup sehat</li>
+                                <li>Imunisasi & vaksinasi</li>
+                                <li>Skrining penyakit</li>
+                                <li>Deteksi dini PTM</li>
+                            </ul>
+                        </div>
+
+                        <div class="pillar">
+                            <h4>2. Accessibility (Aksesibilitas)</h4>
+                            <ul>
+                                <li>Penguatan fasilitas primer</li>
+                                <li>Telemedicine & konsultasi virtual</li>
+                                <li>Seha Virtual Hospital</li>
+                                <li>Platform Sehhaty</li>
+                            </ul>
+                        </div>
+
+                        <div class="pillar">
+                            <h4>3. Quality & Efficiency</h4>
+                            <ul>
+                                <li>Standar mutu kesehatan</li>
+                                <li>Keselamatan pasien</li>
+                                <li>Pengukuran kinerja</li>
+                                <li>Integrasi sistem</li>
+                            </ul>
+                        </div>
+
+                        <div class="pillar">
+                            <h4>4. Patient-Centered Care</h4>
+                            <ul>
+                                <li>Komunikasi jelas dengan pasien</li>
+                                <li>Pengambilan keputusan bersama</li>
+                                <li>Akses informasi kesehatan</li>
+                                <li>Koordinasi layanan terpadu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Model Transformasi: Dari Kuratif Menuju Preventif</h3>
+                    <canvas id="transformationChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Digital Health Section -->
+            <section id="digital" class="section">
+                <div class="section-header">
+                    <h2>💻 Transformasi Kesehatan Digital</h2>
+                </div>
+
+                <div class="digital-overview">
+                    <div class="digital-card-main">
+                        <h3>Strategi Digital Health Arab Saudi</h3>
+                        <p>Arab Saudi mengembangkan infrastruktur teknologi kesehatan nasional untuk membangun sistem yang terintegrasi, efisien, dan berbasis data. Teknologi digital menjadi kunci untuk memperluas akses, meningkatkan kualitas, dan mendukung transformasi dari model kuratif menuju preventif.</p>
+                    </div>
+                </div>
+
+                <div class="digital-technologies">
+                    <h3>Teknologi Digital Kesehatan yang Diimplementasikan</h3>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <div class="tech-icon">📋</div>
+                            <h4>Electronic Health Record (EHR)</h4>
+                            <ul>
+                                <li>Dokumentasi digital pasien</li>
+                                <li>Tanda vital terintegrasi</li>
+                                <li>Riwayat kesehatan lengkap</li>
+                                <li>Akses antar-fasilitas</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">📞</div>
+                            <h4>Telemedicine & Telehealth</h4>
+                            <ul>
+                                <li>Konsultasi jarak jauh</li>
+                                <li>Monitoring pasien remote</li>
+                                <li>Edukasi pasien digital</li>
+                                <li>Komunikasi real-time</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">🏥</div>
+                            <h4>Seha Virtual Hospital (SVH)</h4>
+                            <ul>
+                                <li>242+ rumah sakit terhubung</li>
+                                <li>48 spesialisasi utama</li>
+                                <li>16 juta konsultasi (2025)</li>
+                                <li>Layanan 24/7</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">📱</div>
+                            <h4>Aplikasi Sehhaty</h4>
+                            <ul>
+                                <li>31 juta+ pengguna aktif</li>
+                                <li>Risk assessment kesehatan</li>
+                                <li>Penjadwalan layanan kesehatan</li>
+                                <li>Akses rekam medis</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">🤖</div>
+                            <h4>Artificial Intelligence (AI)</h4>
+                            <ul>
+                                <li>Sistem pendukung keputusan klinis</li>
+                                <li>Analisis data prediktif</li>
+                                <li>Deteksi dini penyakit</li>
+                                <li>Personalisasi terapi</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">🎮</div>
+                            <h4>Virtual Reality (VR)</h4>
+                            <ul>
+                                <li>Simulasi pelatihan klinis</li>
+                                <li>Kegawatdaruratan neonatal</li>
+                                <li>Pengambilan keputusan praktek</li>
+                                <li>Pembelajaran interaktif</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">📊</div>
+                            <h4>Saudi E-Health Exchange (SEHE)</h4>
+                            <ul>
+                                <li>Pertukaran data terintegrasi</li>
+                                <li>Interoperabilitas sistem</li>
+                                <li>Data sharing antar provider</li>
+                                <li>Standar pertukaran data</li>
+                            </ul>
+                        </div>
+
+                        <div class="tech-card">
+                            <div class="tech-icon">⌚</div>
+                            <h4>Remote Patient Monitoring (RPM)</h4>
+                            <ul>
+                                <li>Monitoring penyakit kronis</li>
+                                <li>Perangkat wearable IoT</li>
+                                <li>Alert kesehatan real-time</li>
+                                <li>Deteksi dini perubahan status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Perkembangan Pengguna Teknologi Digital Kesehatan</h3>
+                    <canvas id="digitalAdoptionChart"></canvas>
+                </div>
+
+                <div class="digital-benefits">
+                    <h3>Manfaat Transformasi Digital</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <div class="benefit-content">
+                                <h4>Akses Lebih Luas</h4>
+                                <p>Masyarakat di daerah terpencil dapat mengakses dokter spesialis melalui telemedicine</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <div class="benefit-content">
+                                <h4>Efisiensi Operasional</h4>
+                                <p>Integrasi data mengurangi duplikasi pemeriksaan dan mempercepat layanan</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <div class="benefit-content">
+                                <h4>Pengambilan Keputusan Berbasis Data</h4>
+                                <p>Analisis data mendukung perencanaan program kesehatan yang lebih efektif</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <div class="benefit-content">
+                                <h4>Pelayanan Preventif</h4>
+                                <p>Monitoring berkelanjutan membantu deteksi dini dan pencegahan penyakit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="statistics" class="section">
+                <div class="section-header">
+                    <h2>📈 Statistik & Data Kesehatan</h2>
+                </div>
+
+                <div class="stats-detailed">
+                    <div class="stat-detailed-card">
+                        <h3>Tenaga Kesehatan Arab Saudi (2023)</h3>
+                        <canvas id="healthcareProfessionalsChart"></canvas>
+                    </div>
+
+                    <div class="stat-detailed-card">
+                        <h3>Fasilitas Kesehatan Berdasarkan Wilayah</h3>
+                        <canvas id="hospitalDistributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="data-table-container">
+                    <h3>Beban Penyakit & Kematian</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Penyakit</th>
+                                <th>% Kematian</th>
+                                <th>Prevalensi/Status</th>
+                                <th>Strategi Utama</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Penyakit Kardiovaskular</td>
+                                <td>37%</td>
+                                <td>>25% hipertensi, 32% dislipidemia</td>
+                                <td>CVDMP, Nurse-Led Clinics, STEMI Network</td>
+                            </tr>
+                            <tr>
+                                <td>Kanker</td>
+                                <td>10%</td>
+                                <td>28,113 kasus baru/tahun</td>
+                                <td>NCCP, Mammogram Screening, ColoRectal Screening</td>
+                            </tr>
+                            <tr>
+                                <td>Diabetes Melitus</td>
+                                <td>3%*</td>
+                                <td>17.7% populasi dewasa</td>
+                                <td>National Diabetes Program, Sehaty, Diabetic Clinics</td>
+                            </tr>
+                            <tr>
+                                <td>Penyakit Respiratori Kronis</td>
+                                <td>3%</td>
+                                <td>14% anak, 3.5% dewasa</td>
+                                <td>Anti-Smoking Campaign, 500+ Quit-Smoking Clinics</td>
+                            </tr>
+                            <tr>
+                                <td>Penyakit Ginjal Kronis</td>
+                                <td>2-3%</td>
+                                <td>5.7% populasi umum, 30-40% diabetik</td>
+                                <td>Renal Health Program, eGFR Screening</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="table-note">* Penyakit ginjal juga menjadi penyebab pembiayaan rawat inap jangka panjang terbesar</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Saudi Arabia Health Dashboard | Kelompok 3 - Analisis Kesehatan Transkultural</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
