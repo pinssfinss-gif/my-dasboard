@@ -150,6 +150,145 @@ if (diseaseBurdenCtx) {
     });
 }
 
+// Infectious Disease Chart
+const infectiousDiseaseCtx = document.getElementById('infectiousDiseaseChart');
+if (infectiousDiseaseCtx) {
+    new Chart(infectiousDiseaseCtx, {
+        type: 'horizontalBar',
+        data: {
+            labels: [
+                'Meningitis Meningokokus',
+                'Dengue',
+                'Malaria',
+                'Brucellosis',
+                'COVID-19',
+                'Tuberculosis',
+                'MERS-CoV'
+            ],
+            datasets: [{
+                label: 'Insidensi per 100,000 penduduk',
+                data: [2.5, 8.3, 1.2, 3.1, 15.6, 5.8, 0.8],
+                backgroundColor: [
+                    '#e74c3c',
+                    '#f39c12',
+                    '#3498db',
+                    '#e67e22',
+                    '#c0392b',
+                    '#27ae60',
+                    '#8e44ad'
+                ],
+                borderColor: '#fff',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value.toFixed(1);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Emerging Disease Trend Chart
+const emergingDiseaseTrendCtx = document.getElementById('emergingDiseaseTrendChart');
+if (emergingDiseaseTrendCtx) {
+    new Chart(emergingDiseaseTrendCtx, {
+        type: 'line',
+        data: {
+            labels: ['2022', 'Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', '2024'],
+            datasets: [
+                {
+                    label: 'Mpox Cases',
+                    data: [0, 3, 8, 12, 15, 18],
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#e74c3c',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                },
+                {
+                    label: 'COVID-19 Variants',
+                    data: [45, 38, 32, 28, 25, 22],
+                    borderColor: '#f39c12',
+                    backgroundColor: 'rgba(243, 156, 18, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#f39c12',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                },
+                {
+                    label: 'Multi-Drug Resistant Pathogens',
+                    data: [25, 28, 32, 35, 38, 42],
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#27ae60',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                },
+                {
+                    label: 'Rift Valley Fever Cases',
+                    data: [5, 4, 3, 4, 5, 6],
+                    borderColor: '#9b59b6',
+                    backgroundColor: 'rgba(155, 89, 182, 0.1)',
+                    borderWidth: 2,
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#9b59b6',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        padding: 15,
+                        font: { size: 11 }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Jumlah Kasus Terkonfirmasi'
+                    }
+                }
+            }
+        }
+    });
+}
+
 // Transformation Chart (Kuratif vs Preventif)
 const transformationCtx = document.getElementById('transformationChart');
 if (transformationCtx) {
@@ -389,9 +528,9 @@ document.addEventListener('keydown', function(event) {
         toggleTheme();
     }
 
-    // Number keys untuk navigasi (1-7)
+    // Number keys untuk navigasi (1-9)
     if (event.altKey) {
-        const sections = ['home', 'profile', 'health', 'policy', 'vision', 'digital', 'statistics'];
+        const sections = ['home', 'profile', 'health', 'infectious', 'emerging', 'policy', 'vision', 'digital', 'statistics'];
         const key = parseInt(event.key);
         
         if (key >= 1 && key <= sections.length) {
@@ -462,7 +601,13 @@ function exportToCSV() {
         ['Kanker', '10%'],
         ['Diabetes Melitus', '3%'],
         ['Penyakit Respiratori', '3%'],
-        ['Penyakit Ginjal', '2-3%']
+        ['Penyakit Ginjal', '2-3%'],
+        ['', ''],
+        ['Penyakit Menular', 'Insidensi per 100K'],
+        ['Meningitis Meningokokus', '2.5'],
+        ['Dengue', '8.3'],
+        ['COVID-19', '15.6'],
+        ['Tuberculosis', '5.8']
     ];
 
     let csv = data.map(row => row.join(',')).join('\n');
@@ -546,5 +691,5 @@ function toggleDebugMode() {
 if (debugMode) {
     console.log('🔍 Dashboard Debug Mode Active');
     console.log('📊 Saudi Arabia Health Dashboard');
-    console.log('⌨️ Shortcuts: Ctrl+K (toggle theme), Alt+1-7 (navigate sections)');
+    console.log('⌨️ Shortcuts: Ctrl+K (toggle theme), Alt+1-9 (navigate sections)');
 }
